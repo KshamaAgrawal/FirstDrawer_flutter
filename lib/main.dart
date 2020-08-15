@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {  
     return Scaffold(  
       appBar: AppBar(title: Text(title)),  
-      body: Center(child: Text('Hello, welcome to flutter')),  
+      body: Center(child: Text('Hello, welcome to flutter')),
       drawer: Drawer(  
         child: ListView( 
           padding: EdgeInsets.zero,  
@@ -91,8 +91,8 @@ class MyHomePage extends StatelessWidget {
         ),  
       ), 
       bottomNavigationBar:BottomNavigationBar(
+        backgroundColor: Colors.orange,
         currentIndex: _cIndex,
-        // type: BottomNavigationBarType.shifting ,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

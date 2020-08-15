@@ -37,13 +37,12 @@ class MyHomePage extends StatelessWidget {
                   backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
                 ),
               ),
-            //   decoration: new BoxDecoration(
-            //     color: Colors.black,
-            //     image: new DecorationImage(
-            //       // fit: BoxFit.fill,
-            //       image: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg")
-            //     ),
-            //   ),
+              // decoration: new BoxDecoration(
+              //   color: Colors.black,
+              //   image: new DecorationImage(
+              //     image: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg")
+              //   ),
+              // ),
             ),    
             DrawerHeader(  
               child: Text(  
@@ -55,38 +54,32 @@ class MyHomePage extends StatelessWidget {
             ),  
             ListTile(  
               title: Text('page 1'),  
-              // onTap: () {  
-              //   Navigator.push(  
-              //     context,  
-              //     MaterialPageRoute(builder: (context) => page1Page()),  
-              //   );  
-              // },  
+              onTap: () {  
+                Navigator.push(  
+                  context,  
+                  MaterialPageRoute(builder: (context) => page1Page()),  
+                );  
+              },  
             ),
             ListTile(  
               title: Text('page 2'),  
-              // onTap: () {  
-              //   // Update the state of the app  
-              //   // ...  
-              //   // Then close the drawer  
-              //   Navigator.push(  
-              //     context,  
-              //     MaterialPageRoute(builder: (context) => page2Page()),  
-              //   );  
-              // },  
+              onTap: () {  
+                Navigator.push(  
+                  context,  
+                  MaterialPageRoute(builder: (context) => page2Page()),  
+                );  
+              },  
             ),
             // new Divider(),
             ListTile(  
               title: Text('close', style: TextStyle(color: Colors.deepOrange),),
               trailing: new Icon(Icons.cancel),  
-              // onTap: () {  
-              //   // Update the state of the app  
-              //   // ...  
-              //   // Then close the drawer  
-              //   Navigator.push(  
-              //     context,  
-              //     MaterialPageRoute(builder: (context) => closePage()),  
-              //   );  
-              // },  
+              onTap: () {  
+                Navigator.push(  
+                  context,  
+                  MaterialPageRoute(builder: (context) => closePage()),  
+                );  
+              },  
             ),  
           ],  
         ),  
@@ -95,59 +88,59 @@ class MyHomePage extends StatelessWidget {
   }  
 } 
   
-// class page1Page extends StatelessWidget {  
-//   @override  
-//   Widget build(BuildContext context) {  
-//     return Scaffold(  
-//       appBar: AppBar(  
-//         title: Text("page 1 Page"),  
-//       ),  
-//       body: Center(  
-//         child: RaisedButton(  
-//           onPressed: () {  
-//             Navigator.pop(context);  
-//           },  
-//           child: Text('Go back!'),  
-//         ),  
-//       ),  
-//     );  
-//   }  
-// }  
+class page1Page extends StatelessWidget {  
+  @override  
+  Widget build(BuildContext context) {  
+    return Scaffold(  
+      appBar: AppBar(  
+        title: Text("page 1 Page"),  
+      ),  
+      body: Center(  
+        child: RaisedButton(  
+          onPressed: () {  
+            Navigator.pop(context);  
+          },  
+          child: Text('Go back!'),  
+        ),  
+      ),  
+    );  
+  }  
+}  
   
-// class page2Page extends StatelessWidget {  
-//   @override  
-//   Widget build(BuildContext context) {  
-//     return Scaffold(  
-//       appBar: AppBar(  
-//         title: Text("page 2 Page"),  
-//       ),  
-//       body: Center(  
-//         child: RaisedButton(  
-//           onPressed: () {  
-//             Navigator.pop(context);  
-//           },  
-//           child: Text('Go back!'),  
-//         ),  
-//       ),  
-//     );  
-//   }  
-// }
+class page2Page extends StatelessWidget {  
+  @override  
+  Widget build(BuildContext context) {  
+    return Scaffold(  
+      appBar: AppBar(  
+        title: Text("page 2 Page"),  
+      ),  
+      body: Center(  
+        child: RaisedButton(  
+          onPressed: () {  
+            Navigator.pop(context);  
+          },  
+          child: Text('Go back!'),  
+        ),  
+      ),  
+    );  
+  }  
+}
 
-// class closePage extends StatelessWidget {  
-//   @override  
-//   Widget build(BuildContext context) {  
-//     return Scaffold(  
-//       appBar: AppBar(  
-//         title: Text("close Page"),  
-//       ),  
-//       body: Center(  
-//         child: RaisedButton(  
-//           onPressed: () {  
-//             Navigator.pop(context);  
-//           },  
-//           child: Text('Go back!'),  
-//         ),  
-//       ),  
-//     );  
-//   }  
-// }  
+class closePage extends StatelessWidget {  
+  @override  
+  Widget build(BuildContext context) {  
+    return Scaffold(  
+      appBar: AppBar(  
+        title: Text("close Page"),  
+      ),  
+      body: Center(  
+        child: RaisedButton(  
+          onPressed: () {  
+            Navigator.pop(context);  
+          },  
+          child: Text('Go back!'),  
+        ),  
+      ),  
+    );  
+  }  
+}  

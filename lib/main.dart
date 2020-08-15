@@ -32,7 +32,17 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {  
     return Scaffold(  
       appBar: AppBar(title: Text(title)),  
-      body: Center(child: Text('Hello, welcome to flutter')),
+      body: Center(
+        child: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage("https://flutter-examples.com/wp-content/uploads/2020/02/dice.jpg"),
+          fit: BoxFit.cover)
+          ),
+        child: Center(child: Text('Hello, welcome to flutter', style: TextStyle(color: Colors.white, fontSize: 22),))
+        ),
+      ),
       drawer: Drawer(  
         child: ListView( 
           padding: EdgeInsets.zero,  

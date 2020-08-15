@@ -32,18 +32,18 @@ class MyHomePage extends StatelessWidget {
             new UserAccountsDrawerHeader( 
               accountName: new Text("Kshama Agrawal"),
               accountEmail: new Text("Kshama@securitytroops.com"),
-            //   currentAccountPicture: new GestureDetector(
-            //     child: new CircleAvatar(
-            //       backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
-            //     ),
-            //   ),
-              decoration: new BoxDecoration(
-                color: Colors.black,
-                image: new DecorationImage(
-                  // fit: BoxFit.fill,
-                  image: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg")
+              currentAccountPicture: new GestureDetector(
+                child: new CircleAvatar(
+                  backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
                 ),
               ),
+            //   decoration: new BoxDecoration(
+            //     color: Colors.black,
+            //     image: new DecorationImage(
+            //       // fit: BoxFit.fill,
+            //       image: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg")
+            //     ),
+            //   ),
             ),    
             DrawerHeader(  
               child: Text(  

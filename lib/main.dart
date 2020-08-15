@@ -15,11 +15,19 @@ class MyApp extends StatelessWidget {
   }  
 } 
 
-class MyHomePage extends StatelessWidget {  
+class MyHomePage extends StatelessWidget { 
+  int _cIndex = 0;
+
+  void _incrementTab(index) {
+    setState() {
+      _cIndex = index;
+      print(_cIndex);
+    };
+  } 
   final String title;  
   
-  MyHomePage({Key key, this.title}) : super(key: key);  
-  
+  MyHomePage({Key key, this.title}) : super(key: key);
+
   @override  
   Widget build(BuildContext context) {  
     return Scaffold(  
@@ -45,9 +53,7 @@ class MyHomePage extends StatelessWidget {
               // ),
             ),    
             DrawerHeader(  
-              child: Text(  
-                'Drawer Header',  
-                style: TextStyle(color: Colors.white, fontSize: 22),),  
+              child: Text('Drawer Header', style: TextStyle(color: Colors.white, fontSize: 22),),  
               decoration: BoxDecoration(  
                 color: Colors.cyan[300],  
               ),  
@@ -83,7 +89,28 @@ class MyHomePage extends StatelessWidget {
             ),  
           ],  
         ),  
-      ),  
+      ), 
+      bottomNavigationBar:BottomNavigationBar(
+        currentIndex: _cIndex,
+        // type: BottomNavigationBarType.shifting ,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: new Text('Home')
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            title: new Text('Business')
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            title: new Text('School')
+          ),
+        ],
+        onTap: (index){
+            _incrementTab(index);
+        },
+      ),
     );  
   }  
 } 
@@ -143,4 +170,68 @@ class closePage extends StatelessWidget {
       ),  
     );  
   }  
-}  
+}
+
+// class MyStatefulWidget extends StatefulWidget {
+//   MyStatefulWidget({Key key}) : super(key: key);
+
+//   @override
+//   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+// }
+
+// class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+//   int _selectedIndex = 0;
+//   static const TextStyle optionStyle =
+//       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+//   static const List<Widget> _widgetOptions = <Widget>[
+//     Text(
+//       'Index 0: Home',
+//       style: optionStyle,
+//     ),
+//     Text(
+//       'Index 1: Business',
+//       style: optionStyle,
+//     ),
+//     Text(
+//       'Index 2: School',
+//       style: optionStyle,
+//     ),
+//   ];
+
+//   void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('BottomNavigationBar Sample'),
+//       ),
+//       body: Center(
+//         child: _widgetOptions.elementAt(_selectedIndex),
+//       ),
+//       bottomNavigationBar: BottomNavigationBar(
+//         items: const <BottomNavigationBarItem>[
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             title: Text('Home'),
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.business),
+//             title: Text('Business'),
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.school),
+//             title: Text('School'),
+//           ),
+//         ],
+//         currentIndex: _selectedIndex,
+//         selectedItemColor: Colors.amber[800],
+//         onTap: _onItemTapped,
+//       ),
+//     );
+//   }
+// }  

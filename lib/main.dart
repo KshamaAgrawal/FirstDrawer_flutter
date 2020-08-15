@@ -45,14 +45,14 @@ class MyHomePage extends StatelessWidget {
             //     ),
             //   ),
             // ),    
-            // DrawerHeader(  
-            //   child: Text(  
-            //     'Drawer Header',  
-            //     style: TextStyle(color: Colors.white, fontSize: 22),),  
-            //   decoration: BoxDecoration(  
-            //     color: Colors.cyan[300],  
-            //   ),  
-            // ),  
+            DrawerHeader(  
+              child: Text(  
+                'Drawer Header',  
+                style: TextStyle(color: Colors.white, fontSize: 22),),  
+              decoration: BoxDecoration(  
+                color: Colors.cyan[300],  
+              ),  
+            ),  
             ListTile(  
               title: Text('page 1'),  
               // onTap: () {  

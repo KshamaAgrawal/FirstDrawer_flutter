@@ -70,7 +70,7 @@ class MyHomePage extends StatelessWidget {
                 );  
               },  
             ),
-            // new Divider(),
+            new Divider(),
             ListTile(  
               title: Text('close', style: TextStyle(color: Colors.deepOrange),),
               trailing: new Icon(Icons.cancel),  

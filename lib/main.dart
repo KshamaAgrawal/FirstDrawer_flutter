@@ -46,10 +46,10 @@ class MyHomePage extends StatelessWidget {
           constraints: BoxConstraints.expand(),
           decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage("https://flutter-examples.com/wp-content/uploads/2020/02/dice.jpg"),
+            image: NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
           fit: BoxFit.cover)
           ),
-        child: Center(child: Text('Hello, welcome to flutter', style: TextStyle(color: Colors.white, fontSize: 22),))
+        child: Center(child: Text('Hello, welcome to flutter', style: TextStyle(color: Colors.orange, fontSize: 22,),))
         ),
       ),
       drawer: Drawer(  
@@ -64,12 +64,12 @@ class MyHomePage extends StatelessWidget {
                   backgroundImage: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
                 ),
               ),
-              // decoration: new BoxDecoration(
-              //   color: Colors.black,
-              //   image: new DecorationImage(
-              //     image: new NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg")
-              //   ),
-              // ),
+              decoration: new BoxDecoration(
+                color: Colors.black,
+                image: new DecorationImage(
+                  image: new NetworkImage("https://flutter-examples.com/wp-content/uploads/2020/02/dice.jpg"),
+                ),
+              ),
             ),    
             DrawerHeader(  
               child: Text('Drawer Header', style: TextStyle(color: Colors.white, fontSize: 22),),  
@@ -97,20 +97,15 @@ class MyHomePage extends StatelessWidget {
             ),
             new Divider(),
             ListTile(  
-              title: Text('close', style: TextStyle(color: Colors.deepOrange),),
-              trailing: new Icon(Icons.cancel),  
-              onTap: () {  
-                Navigator.push(  
-                  context,  
-                  MaterialPageRoute(builder: (context) => closePage()),  
-                );  
-              },  
+              title: Text('Close', style: TextStyle(color: Colors.deepOrange, fontWeight: FontWeight.bold),),
+              trailing: new Icon(Icons.cancel, color: Colors.red.shade400,),
+              onTap: () => Navigator.of(context).pop(),  
             ),  
           ],  
         ),  
       ), 
       bottomNavigationBar:BottomNavigationBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.white,
         currentIndex: _cIndex,
         items: [
           BottomNavigationBarItem(
@@ -139,7 +134,7 @@ class page1Page extends StatelessWidget {
   Widget build(BuildContext context) {  
     return Scaffold(  
       appBar: AppBar(  
-        title: Text("page 1 Page"),  
+        title: Text("Welcome at page 1"),  
       ),  
       body: Center(  
         child: RaisedButton(  
@@ -158,26 +153,7 @@ class page2Page extends StatelessWidget {
   Widget build(BuildContext context) {  
     return Scaffold(  
       appBar: AppBar(  
-        title: Text("page 2 Page"),  
-      ),  
-      body: Center(  
-        child: RaisedButton(  
-          onPressed: () {  
-            Navigator.pop(context);  
-          },  
-          child: Text('Go back!'),  
-        ),  
-      ),  
-    );  
-  }  
-}
-
-class closePage extends StatelessWidget {  
-  @override  
-  Widget build(BuildContext context) {  
-    return Scaffold(  
-      appBar: AppBar(  
-        title: Text("close Page"),  
+        title: Text("Welcome at page 2"),  
       ),  
       body: Center(  
         child: RaisedButton(  

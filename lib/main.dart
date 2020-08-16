@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';  
 import 'dart:async';
+// import 'package:flutter_login/flutter_login.dart';
+// import 'dashboard_screen.dart';
+// import 'login_screen.dart';
 
 void main() => runApp(MyApp());  
   
@@ -9,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override  
   Widget build(BuildContext context) {  
     return MaterialApp(  
+      debugShowCheckedModeBanner: false,                                          // remove debug banner 
       title: appTitle,  
       home: MyHomePage(title: appTitle),  
     );  
@@ -24,6 +28,11 @@ class MyHomePage extends StatelessWidget {
       print(_cIndex);
     };
   } 
+  // var username = kshama;
+  // var password;
+  // print(username),
+  // print(password),
+
   final String title;  
   
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -181,3 +190,21 @@ class closePage extends StatelessWidget {
     );  
   }  
 }
+
+// class LoginScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return FlutterLogin(
+//       title: 'ECORP',
+//       logo: 'assets/images/ecorp.png',
+//       onLogin: (_) => Future(null),
+//       onSignup: (_) => Future(null),
+//       onSubmitAnimationCompleted: () {
+//         Navigator.of(context).pushReplacement(MaterialPageRoute(
+//           builder: (context) => DashboardScreen(),
+//         ));
+//       },
+//       onRecoverPassword: (_) => Future(null),
+//     );
+//   }
+// }

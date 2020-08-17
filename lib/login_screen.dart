@@ -11,8 +11,8 @@ class _State extends State<LoginPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  var Username = "Kshama";
-  var Password = "kshama1234";
+  var Username = "admin";
+  var Password = "admin1";
 
   @override
   Widget build(BuildContext context) {

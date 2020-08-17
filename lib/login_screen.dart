@@ -14,23 +14,13 @@ class _State extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text('Login Screen App'),
-        // ),
+        appBar: AppBar(
+          title: Text('Login Screen App'),
+        ),
         body: Padding(
-            padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
-                // Container(
-                //     alignment: Alignment.center,
-                //     padding: EdgeInsets.all(10),
-                //     child: Text(
-                //       'Codeplayon',
-                //       style: TextStyle(
-                //           color: Colors.blue,
-                //           fontWeight: FontWeight.w500,
-                //           fontSize: 30),
-                //     )),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
@@ -93,6 +83,8 @@ class _State extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                     ))
               ],
-            )));
+            )
+        )
+    );
   }
 }

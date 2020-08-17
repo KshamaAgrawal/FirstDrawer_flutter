@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';  
 import 'dart:async';
+import 'login_screen.dart';
 
 class homePage extends StatelessWidget {
   
@@ -11,11 +12,13 @@ class homePage extends StatelessWidget {
       print(_cIndex);
     };
   } 
-  
+
   @override  
   Widget build(BuildContext context) {  
-    return Scaffold(  
-      appBar: AppBar(title: new Text("My Drawer App")),  
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My Drawer App"),
+      ),  
       body: Center(
         child: Container(
           constraints: BoxConstraints.expand(),
@@ -24,7 +27,7 @@ class homePage extends StatelessWidget {
             image: NetworkImage("https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/result.jpeg"),
           fit: BoxFit.cover)
           ),
-        child: Center(child: Text('Hello, welcome to flutter', style: TextStyle(color: Colors.orange, fontSize: 22,),))
+        child: Center(child: Text('Hello, welcome to flutter', style: TextStyle(color: Colors.orange, fontSize: 22,),)),
         ),
       ),
       drawer: Drawer(  
@@ -75,7 +78,17 @@ class homePage extends StatelessWidget {
               title: Text('Close', style: TextStyle(color: Colors.deepOrange, fontWeight: FontWeight.bold),),
               trailing: new Icon(Icons.cancel, color: Colors.red.shade400,),
               onTap: () => Navigator.of(context).pop(),  
-            ),  
+            ),
+            new Divider(), 
+            ListTile(  
+              title: Text('LogOut'),
+              onTap: () {  
+                Navigator.push(  
+                  context,  
+                  MaterialPageRoute(builder: (context) => LoginPage()),  
+                );  
+              },  
+            ), 
           ],  
         ),  
       ), 

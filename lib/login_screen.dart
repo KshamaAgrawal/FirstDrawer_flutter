@@ -11,23 +11,27 @@ class _State extends State<LoginPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  var Username = "Kshama";
+  var Password = "kshama1234";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Login Screen App'),
-        ),
-        body: Padding(
+      body: Padding(
           padding: EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
+                Container(
+                  padding: EdgeInsets.all(40),
+                  child: Center(child: new Text('Login Form',style: TextStyle(fontSize: 22,),)),
+                ),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
                     controller: nameController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'User Name',
+                      labelText: 'UserName',
                     ),
                   ),
                 ),
@@ -57,11 +61,25 @@ class _State extends State<LoginPage> {
                       color: Colors.blue,
                       child: Text('Login'),
                       onPressed: () {
-                        Navigator.push(  
-                          context,  
-                          MaterialPageRoute(builder: (context) => homePage()),  
-                        );
-                        print(nameController.text);
+                        if(nameController.text == Username || passwordController.text == Password){
+                          Navigator.push(  
+                            context,  
+                            MaterialPageRoute(builder: (context) => homePage()),  
+                          );
+                        }
+                        else{
+                          AlertDialog alert = AlertDialog(  
+                            title: Text("Simple Alert"),  
+                            content: Text("Invalid UserName and Password", style: TextStyle(color: Colors.red),),    
+                          ); 
+                          showDialog(  
+                            context: context,  
+                            builder: (BuildContext context) {  
+                              return alert;  
+                            },  
+                          );  
+                        }
+                       print(nameController.text);
                         print(passwordController.text);
                       },
                     )),

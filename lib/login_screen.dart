@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'home.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class LoginPage extends StatefulWidget {
 
@@ -11,11 +14,39 @@ class _State extends State<LoginPage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  var Username = "admin";
-  var Password = "admin1";
-
   @override
   
+  login(String Username, String Password) async{
+    print("function work");
+    Map data = {
+      'username': Username,
+      'password': Password
+    };
+    var jsonData = null;
+    var response = await http.post("https://testing.timestint.com/tsapi/v1/login/", body: data);
+    print(response.statusCode);
+    if(response.statusCode == 200){
+      jsonData = json.decode(response.body);
+      print(jsonData);
+      Navigator.push(  
+          context,  
+          MaterialPageRoute(builder: (context) => homePage()),  
+        );  
+    }
+    else{
+      AlertDialog alert = AlertDialog(  
+        title: Text("Simple Alert"),  
+        content: Text("Invalid UserName and Password", style: TextStyle(color: Colors.red),),    
+      ); 
+      showDialog(  
+        context: context,  
+        builder: (BuildContext context) {  
+          return alert;  
+        },  
+      );
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
@@ -61,47 +92,9 @@ class _State extends State<LoginPage> {
                       textColor: Colors.white,
                       color: Colors.blue,
                       child: Text('Login'),
-                      onPressed: () {
-                        if(nameController.text == Username || passwordController.text == Password){
-                          Navigator.push(  
-                            context,  
-                            MaterialPageRoute(builder: (context) => homePage()),  
-                          );
-                        }
-                        else{
-                          AlertDialog alert = AlertDialog(  
-                            title: Text("Simple Alert"),  
-                            content: Text("Invalid UserName and Password", style: TextStyle(color: Colors.red),),    
-                          ); 
-                          showDialog(  
-                            context: context,  
-                            builder: (BuildContext context) {  
-                              return alert;  
-                            },  
-                          );  
-                        }
-                       print(nameController.text);
-                        print(passwordController.text);
-                      },
+                      onPressed: () => login(nameController.text, passwordController.text), 
                     )),
-                Container(
-                    child: Row(
-                      children: <Widget>[
-                        Text('Does not have account?'),
-                        FlatButton(
-                          textColor: Colors.blue,
-                          child: Text(
-                            'Sign in',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          onPressed: () {
-                            //signup screen
-                          },
-                        )
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    ))
-              ],
+                ],
             )
         )
     );

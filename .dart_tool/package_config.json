@@ -74,6 +74,12 @@
       "languageVersion": "2.1"
     },
     {
+      "name": "flutter_plugin_android_lifecycle",
+      "rootUri": "file:///home/kshama/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///home/kshama/snap/flutter/common/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -84,6 +90,18 @@
       "rootUri": "file:///home/kshama/snap/flutter/common/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "google_maps_flutter",
+      "rootUri": "file:///home/kshama/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-1.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "google_maps_flutter_platform_interface",
+      "rootUri": "file:///home/kshama/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_platform_interface-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
     },
     {
       "name": "http",
@@ -230,6 +248,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "stream_transform",
+      "rootUri": "file:///home/kshama/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/stream_transform-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "string_scanner",
       "rootUri": "file:///home/kshama/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0-nullsafety.1",
       "packageUri": "lib/",
@@ -278,7 +302,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-12-12T03:20:52.728883Z",
+  "generated": "2020-12-12T09:28:12.879458Z",
   "generator": "pub",
   "generatorVersion": "2.10.4"
 }
